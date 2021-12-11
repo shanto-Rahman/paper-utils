@@ -1,0 +1,25 @@
+\section{Enhancement of TSVD}
+\label{lbl:tsvd_enhance}
+\input{code/code1}
+In this project, initially we implement the TSVD paper \cite{} and run our
+subject projects on it. We observed that the TSVD can handle the thread safety
+API if it finds in the code but it measurebly fails when the source code has
+some primitive types of shared objects. For example, any shared integer
+variable, string variable and so on. Meanwhile, when we manually inspect the
+source code to find the existance of data-race situation, we identify these are
+very commonly happening in the source code shown in Figure~\ref{fig:dataRace2}. Hence, we modify our TSVD with the
+incorporation of these variable assignment operations. 
+
+In order to detect more data-race situation, we modify the byte-code
+instrumentation to get assignment operation by PUTSTATIC, GETSTATIC and
+PUTFIELD, GETFIELD opcode from the java byte code stack tarce. Then we call the
+different proxy methods to handle those types of operation by our TSVD. Basically these four operations were missing in the TSVD and hence we incorporate those for JAVA thread safety violation detection. 
+
+
+
+
+
+
+
+
+

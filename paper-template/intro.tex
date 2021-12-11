@@ -1,13 +1,80 @@
 \section{Introduction}
 \label{sec:intro}
+\input{code/code}
+Concurrent programming is widespread due to the presence of multi-core computer
+system. However, developing an error-free and efficient program is difficult to
+build due to the absence of proper thread synchronization. Improper
+thread-synchronization often introduces concurrency faults more specifically
+data-race. Data race is a situation when multiple threads will access a shared
+variable and will try to access memory location at the same time.
+Figure~\ref{fig:code} represents a code snippet of data race situation taken
+from JACONTEBE benchmark \cite{}. In this example code, appenderList is a
+shared data structure. At line 3, the size of the list is measured and if the
+size is a non-zero positive integer then the values are extracted one by one.
+At the end of this, the appenderList data structure is made null. The problem
+may happen if multiple threads try to execute this code segment simultaneously
+and one thread removes all the contents of the list, meanwhile another thread
+is trying to read the value from the that data-structure.    
 
-Here is the introduction text, where we describe our \Toolname{} along
-with our \TotalResults{} results.\Space{ The text in here is whited
-out in case we are over and need to cut text.}
+These data-race bugs are very difficult to expose because of the
+non-deterministic thread-interleavings behavior. It is also common that race
+condition often hides rare thread-interleavings during testing time but may
+show up in the production phase. In the object-oriented language, thread-safety
+contract is associated with each class and library. This kind of contract will
+specify which methods could not be called concurrently. The thread-safety
+violation occurs when a program violates this contract. At the end, it will
+cause crashes or weird behaviors of the program.  Hence, researchers propose
+few of the data race detection mechanism which can be categorized in two
+groups; static race detection and dynamic race detection. Static data race
+often consider flow, context and synchronization primitive information from a
+program \cite{kahlon2009ESEC}, \cite{naik2006PLDI} whereas dynamic race
+detection mechanism often uses run-time information of the code
+\cite{pozniansky2007multirace}, \cite{li2019efficient}.   The main drawback of
+static analysis is that it demands manual inspection of the source code and
+there might have a large number of false bugs report. Hence, in this study we
+implement thread safety violation detection mechanism for java program by
+considering run-time information of the program. 
+
+In our technique, we followed \cite{li2019efficient} paper as the foundation
+paper. Here, we have four major steps such as byte code instrumentation,
+interception point creation, setting trap mechanism and detect conflict pairs.
+Byte code instrumentation is needed to get the runtime information of a program
+by the stack modification. When we find our required API is found by the
+analysis of jvm stack instructions, we create an interception point for that
+API having object id, thread id, operation id, class name, line number and so
+on. In the case of trap mechanism, we have few steps most importantly check for
+trap, should delay, set for trap, delay and clear trap. Finally, at the end of
+jvm shutdown, we record the number of conflicting pairs for different
+interception point.
+
+In the experiment, we considered three types of projects; toy projects
+(developed by the authors of this report) \cite{toy_project_1},
+\cite{toy_project_2}, JACONTEBE Benchmark \cite{lin2015jacontebe} and open
+source Github projects \cite{githubProjects}. Results show that the project's
+outcome is quite convincing. In the two toy projects, we saw that all the
+conflicting pairs are reported by our algorithm. In the case of JACONTEBE, our
+tool also produces satisfactory results by identifying conflicting pairs due to
+the data race. In the case of open source github projects, we consider 21
+projects which have multiple thread instance. For these datasets,  our technique
+can potentially detect five conflicting data race pairs and we will report
+these five to those projects to open new issues.
+
+
+The rest of this paper is organized as follows. Section \ref{} presents an overview
+of the existing works. Section \ref{sec:method} presents our algorithms to find thread safety violations. Section \ref{sec:experiment}
+provides demonstration of the effectiveness of TSVD and lists the experimental
+results to illustrate the performance of TSVD as compared to other existing
+RV-Predict tool. Finally, Section \ref{} concludes the findings with future research directions.
+
+
+
+%Here is the introduction text, where we describe our \Toolname{} along
+%with our \TotalResults{} results.\Space{ The text in here is whited
+%out in case we are over and need to cut text.}
 
 \Comment{This is a comment, will not be rendered in PDF.}
 
-Citing our prior work~\cite{ShiETAL2014FSE, ShiETAL2019FSE, GyoriETAL2015ISSTA}.
+%Citing our prior work~\cite{ShiETAL2014FSE, ShiETAL2019FSE, GyoriETAL2015ISSTA}.
 
-We found one \bug{} and it was awesome.
-We found two \bug{}s and it was even more awesome.
+%We found one \bug{} and it was awesome.
+%We found two \bug{}s and it was even more awesome.

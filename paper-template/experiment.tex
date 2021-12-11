@@ -1,0 +1,262 @@
+\section{Experiments}
+\label{sec:experiment}
+To measure the efficacy of the TSVD, we have considered three different categories projects and run our TSVD on those dataset. Afterwards, we record the number of bugs our TSVD can detect and the overhead it's needed. We also compare our results with the existing concurrency bug detection technique namely RV-Predict. The details of each work is in the following sections.
+
+\subsection{Experimental Settings}
+We run our experiments on Ubuntu 20.04.2 LTS operating system. As for the
+server, we run all our benchmark suite on a server with Intel(R) Core(TM)
+i9-9900 CPU @ 3.10GHz. The architecture is x86\_64 and it has 16 CPUs.
+
+\subsection{DataSet Description} 
+All projects in our study are Java projects that build with
+Maven \cite{maven} and use JUnit. 
+We collected the projects from three different sources as shown in Table~\ref{table:dataset}: 1) Toy
+projects, 2) JACONTEBE projects (especially developed for concurrency bugs) and
+3) open source github thread based projects. In the category of Toy projects, we
+have developed the toy projects which are incorporated with agent.jar.
+
+As for our evaluation, we use JaConTeBe (Java Concurrency Test Benchmark) suite
+which provides code and tests to reproduce concurrency bugs in several open
+source Java projects. The bugs cover various kinds of concurrency bug types,
+including atomicity violation, data race and deadlock. All these bugs the JaConTeBe can expose are real world and collected from the
+projects' online bug-tracking systems. They provide the corresponding binary
+.jar files for the target project. These target projects contain \textit{Apache
+Commons DBCP}, \textit{Apache Derby} and \textit{Groovy}, etc. Mostly,
+reproducing the bug can just use the unmodified project's binary jar files.
+However, the buggy interleaving is rather infrequent and thus the JaConTeBe
+data set provides modified .jar files, in which it adds more control for
+interleavings during class-loading. All the test projects are organized as an
+Eclipse project, thus we can just use "\textit{java -cp}" to put our
+instrumented binary .jar to incorporate our tool. The scripts to run all these
+tests will be modified according to these manual written tests.
+
+Besides this data set, we have collected 21 popular Java open source github
+projects which are maven projects and have thread instance. To
+get these projects, we searched on github with some keywords like \textit{"data
+race"}, \textit{"concurrency"}, \textit{"thread"}. We determine the popularity of Github projects using the number of stars. Table \ref{tbl:dataset}
+illustrates our considered 21 projects. 
+
+%Here, Data-Race is a toy project made by the authors, next seven projects (Id: 2-8) are collected from JACONTEBE benchmark dataset \cite{lin2015jacontebe} and the last two projects are obtained from the Github repository. 
+
+Table~\ref{table:dataset} refers to the total $31$ Java projects of these three categories with the Line of Code (LOC) and number of tests. From the table, it is clear that the volumn of the toy projects are not big enough compared to the other projects.  
+
+%\shanto{Position For Dataset Table}
+
+\begin{table*}
+	\centering
+	\caption{the initial dataset}
+	\label{table:dataset}
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\toprule
+		\textbf{Id} & \textbf{Project Category} & \textbf{Project Name}                            & \textbf{Line of Code} & \textbf{\#Tests} \\ \hline
+	%	\midrule
+		1           & \multirow{2}{*} {Toy Project}                & Data-Race                                         &\multicolumn{1}{|r|}{85}                      & \multicolumn{1}{|r|}{1}                       \\  \cline{1-1} \cline{3-5}
+		2           &    & DataRace-Toy-Project2                             & \multicolumn{1}{|r|}{98}                      &\multicolumn{1}{|r|}{1}                       \\ \hline
+		3           & \multirow{7}{*}{JaConTeBe} & Apache Log4j (log4j)                              &\multicolumn{1}{|r|}{553}                     &\multicolumn{1}{|r|}{5}                       \\  \cline{1-1} \cline{3-5}
+		4           &                            & Apache Dbcp (dbcp)                                & 16145                   & 4                       \\  \cline{1-1} \cline{3-5}
+		5           &                            & Apache Derby (derby)                              & 1245                    & 5                       \\  \cline{1-1} \cline{3-5}
+		6           &                            & Apache Groovy (groovy)                            & 1237                    & 6                       \\  \cline{1-1} \cline{3-5}
+		7           &                            & OpenJdk (jdk-6, jdk-7)                            & 5231                    & 20                      \\  \cline{1-1} \cline{3-5}
+		8           &                            & Apache Lucene (lucene)                            & 1879                    & 2                       \\  \cline{1-1} \cline{3-5}
+		9           &                            & Apache Pool (pool)                                & 1108                    & 5                       \\ \hline
+		10          & \multirow{22}{*}{github}   & Java-WebSocket                                    & 26092                   & 528                     \\  \cline{1-1} \cline{3-5}
+		11          &                            & macrozheng/mall                                   & 132034                  & 9                       \\  \cline{1-1} \cline{3-5}
+		12          &                            & google/guava                                      & 363995                  & 1713746                 \\  \cline{1-1} \cline{3-5}
+		13          &                            & eugenp/tutorials                                  & 929619                  & 13993                   \\  \cline{1-1} \cline{3-5}
+		14          &                            & apolloconfig/apollo                               & 104010                  & 901                     \\  \cline{1-1} \cline{3-5}
+		15          &                            & alibaba/druid                                     & 406399                  & 206                     \\  \cline{1-1} \cline{3-5}
+		16          &                            & alibaba/fastjson                                  & 208646                  & 273                     \\  \cline{1-1} \cline{3-5}
+		17          &                            & xkcoding/spring-boot-demo                         & 44107                   & 184                     \\  \cline{1-1} \cline{3-5}
+		18          &                            & alibaba/easyexcel                                 & 26790                   & 277                     \\  \cline{1-1} \cline{3-5}
+		19          &                            & alibaba/canal                                     & 108165                  & 283                     \\  \cline{1-1} \cline{3-5}
+		20          &                            & seata/seata                                       & 200915                  & 982                     \\  \cline{1-1} \cline{3-5}
+		21          &                            & xuxueli/xxl-job                                   & 37834                   & 20                      \\  \cline{1-1} \cline{3-5}
+		22          &                            & jenkinsci/jenkins                                 & 326847                  & 3206                    \\  \cline{1-1} \cline{3-5}
+		23          &                            & alibaba/Sentinel                                  & 83454                   & 531                     \\  \cline{1-1} \cline{3-5}
+		24          &                            & elunez/eladmin                                    & 14386                   & 15                      \\  \cline{1-1} \cline{3-5}
+		25          &                            & linlinjava/litemall                               & 150342                  & 51                      \\  \cline{1-1} \cline{3-5}
+		26          &                            & EnterpriseQualityCoding/FizzBuzzEnterpriseEdition & 1740                    & 1                       \\  \cline{1-1} \cline{3-5}
+		27          &                            & openzipkin/zipkin                                 & 112637                  & 1268                    \\  \cline{1-1} \cline{3-5}
+		28          &                            & apache/shardingsphere                             & 375926                  & 4808                    \\  \cline{1-1} \cline{3-5}
+		29          &                            & JeffLi1993/springboot-learning-example            & 6463                    & 36                      \\  \cline{1-1} \cline{3-5}
+		30          &                            & eclipse-vertx/vert.x                              & 152153                  & 3327                    \\  \cline{1-1} \cline{3-5}
+		31          &                            & YunaiV/SpringBoot-Labs                            & 65510                   & 296                     \\ \hline
+	%	\midrule
+	%	\bottomrule
+	\end{tabular}
+\end{table*}
+
+
+\subsection{Research Questions}
+At this stage, we want to measure the effectiveness of our technique. Hence, we will give the answers to the following questions.
+\begin{itemize}
+	\item RQ1:  How many thread safety violations our tool could expose?
+	\item RQ2:  What is the overhead when running the tool for all projects?
+	\item RQ3:  What is the effectiveness of TSVD compared to the existing techniques?
+%	\item RQ4:  What is the race characteristics of the found bugs?
+%	\item RQ4: After conducting parameter-sensitivity experiments, which combination of parameters can best balance bug exposing capability, accuracy, and cost? - (Not Answered yet)
+\end{itemize}
+The reason for RQ1 is to understand how effective the TSVD is by measure the
+number of detected concurrency bugs.  RQ2 is important because it indicates the
+time consumption required to run TSVD on each of the projects. RQ3 is needed
+because it makes a comparison between the TSVD and the existing technique to
+detect concurrency bugs.  RQ4 discuss about the number of bugs which are
+falsely identified. This is important because our goal is to make the false
+positive rate as zero.  
+
+
+
+
+\subsubsection{RQ1: How many thread safety violations our tool could expose?}
+\label{sec:eval:rq1}
+
+To answer these questions, we run TSVD on these 31 Java projects and record the
+number of bugs due to the conflicting pairs in each project. Table~\ref{tbl:bug_found} shows
+the number of bugs and the location of the conflicting statements. In addition
+to this, we also record the number of runs needed to generate the bugs. Because
+sometimes we need to run the TSVD for more than 1 times to reproduce the bug.
+From this table, we can mention that our TSVD performs  in the case of both Toy
+projects and JACONTEBE benchmark as both projects have the concurrency bugs.
+However, for the 21 open source github projects, TSVD can identify data-race
+bugs for three different projects. The possible reasons may be those projects
+are data-race free. 
+
+%\shanto{put the table for bugs found}
+
+\begin{table*}
+	\centering
+	\caption{found bugs}
+	\label{table:bugs}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|l|l|l|l|l|}
+			\hline
+			Project Name                           & Conflicting Location                                   & \#Bugs & \#Lines                            & \#Runs \\ \hline
+			\midrule
+			DataRace1                              & …                                                      & 1      & \{...\}                            & 1      \\
+			DataRace2                              & …                                                      & 1      & \{...\}                            & 1      \\
+			Apache Log4j (log4j)                   & org/apache/log4j/helpers/AppenderAttachableImpl        & 2      & \{143, 143\}                       & 3      \\
+			Apache Log4j (log4j)                   & org/apache/log4j/spi/ThrowableInformation              & 3      & \{93, 90\}, \{91, 90\}, \{90, 90\} & 1      \\
+			DBCP                                   & ./src/org/apache/commons/dbcp/datasources/Dbcp369.java & 1      & \{40, 44\}                         & 3      \\
+			Derby                                  & org/apache/derby/client/am/LogicalConnection           & 1      & \{64, 136\}                        & 4      \\
+			Groovy                                 & ./src/Groovy3495.java                                  & 1      & \{88, 88\}                         & 4      \\
+			JeffLi1993/springboot-learning-example & ch/qos/logback/classic/LoggerContext                   & 3      & \{167,167\}                        & 1      \\
+			xkcoding/spring-boot-demo              & ch/qos/logback/classic/LoggerContext                   & 5      & \{167, 167\}                       & 1      \\ 
+			\midrule
+		\end{tabular}}
+\end{table*}
+
+
+\subsubsection{RQ2: What is the overhead when running the TSVD?}
+To give the answer of this question, we keep record the time to run each project when
+running without TSVD and with TSVD. Table~\ref{table:comparison} indicates the results of
+required time (time unit is seconds)  needed for executing all these 29
+projects. From the table, it is clear that when we run the projects with TSVD,
+it takes many more time compared to the run without TSVD.  One reason is that
+currently TSVD has a large number of print statement. Sometimes it might be
+more than thousands of statement if the project volumn is large. As a result,
+significant time is consumed. But in the future, we will remove all these
+unnecessary print statement to reduce the run-time overhead.
+
+
+%\shanto{put the table for bugs found}
+
+
+\begin{table}
+	\centering
+	\caption{overhead}
+	\label{table:overhead}
+	\begin{tabular}{|l|ll|}
+		\hline
+		\multirow{2}{*}{Project Name}                                                                & \multicolumn{2}{l|}{Runtime}                  \\ \cline{2-3} 
+		                                                                                             & \multicolumn{1}{l|}{without TSVD} & TSVD      \\ \hline
+													     DataRace-1                                                                                   & \multicolumn{1}{l|}{}             &           \\ \hline
+													     DataRace-2                                                                                   & \multicolumn{1}{l|}{}             &           \\ \hline
+													     Apache Log4j (log4j)                                                                         & \multicolumn{1}{l|}{62.018}       & 508.103   \\ \hline
+													     dbcp                                                                                         & \multicolumn{1}{l|}{16.237}       & 362.146   \\ \hline
+													     derby                                                                                        & \multicolumn{1}{l|}{39.189}       & 183.756   \\ \hline
+													     Groovy                                                                                       & \multicolumn{1}{l|}{22.500}       & 230.789   \\ \hline
+													     pool                                                                                         & \multicolumn{1}{l|}{94.638}       & 340.340   \\ \hline
+													     jdk                                                                                          & \multicolumn{1}{l|}{73.416}       & 540.098   \\ \hline
+													     macrozheng/mall                                                                              & \multicolumn{1}{l|}{8.677}        & 8.512     \\ \hline
+													     google/guava                                                                                 & \multicolumn{1}{l|}{586.716}      & 602.939   \\ \hline
+													     eugenp/tutorials                                                                             & \multicolumn{1}{l|}{1.223}        & 1.213     \\ \hline
+													     apolloconfig/apollo                                                                          & \multicolumn{1}{l|}{102.715}      & 3280.048  \\ \hline
+													     alibaba/druid                                                                                & \multicolumn{1}{l|}{117.433}      & 37788.355 \\ \hline
+													     alibaba/fastjson                                                                             & \multicolumn{1}{l|}{56.055}       & 11.660    \\ \hline
+													     xkcoding/spring-boot-demo                                                                    & \multicolumn{1}{l|}{1636.097}     & 43605.402 \\ \hline
+													     alibaba/easyexcel                                                                            & \multicolumn{1}{l|}{50.220}       & 152.686   \\ \hline
+													     alibaba/canal                                                                                & \multicolumn{1}{l|}{35.200}       & 9324.229  \\ \hline
+													     seata/seata                                                                                  & \multicolumn{1}{l|}{213.269}      & 8058.913  \\ \hline
+													     xuxueli/xxl-job                                                                              & \multicolumn{1}{l|}{2.231}        & 2.662     \\ \hline
+													     jenkinsci/jenkins                                                                            & \multicolumn{1}{l|}{1676.071}     & 75.748    \\ \hline
+													     alibaba/Sentinel                                                                             & \multicolumn{1}{l|}{183.534}      & 23.776    \\ \hline
+													     elunez/eladmin                                                                               & \multicolumn{1}{l|}{18.761}       & 69042.975 \\ \hline
+													     linlinjava/litemall                                                                          & \multicolumn{1}{l|}{4.146}        & 23.000    \\ \hline
+													     \begin{tabular}[c]{@{}l@{}}EnterpriseQualityCoding/\\ FizzBuzzEnterpriseEdition\end{tabular} & \multicolumn{1}{l|}{3.004}        & 9.912     \\ \hline
+														     openzipkin/zipkin                                                                            & \multicolumn{1}{l|}{53.887}       & 36757.206 \\ \hline
+														     apache/shardingsphere                                                                        & \multicolumn{1}{l|}{443.998}      & 86771.741 \\ \hline
+														     \begin{tabular}[c]{@{}l@{}}JeffLi1993/\\ springboot-learning-example\end{tabular}            & \multicolumn{1}{l|}{25.995}       & 1496.681  \\ \hline
+															     eclipse-vertx/vert.x                                                                         & \multicolumn{1}{l|}{681.263}      & 10.763    \\ \hline
+															     YunaiV/SpringBoot-Labs                                                                       & \multicolumn{1}{l|}{1.980}        & 2.714     \\ \hline
+	\end{tabular}
+\end{table}
+
+
+
+
+\subsubsection{RQ3: What is the effectiveness of TSVD compared to the existing tools?}
+To measure the effectiveness of the TSVD, we focus on the performance to detect the concurrency bugs and how accurately the bugs are identified compared to the other existing tool. To answer this question, we searched for any open source tool to
+detect Java data-race condition. While exploring, we only found RV-Predict
+\cite{}. Hence, in this project, we compare our results with the RV-Predict and
+illustrate those results in the Table~\ref{table:comparison}. While comparing the results with the
+RV-Predict, we observe that RV-Predict does not produce result set with the
+conflicting statements whereas our's TSVD can detect exact conflicting
+statements in the source code. In the case of effectiveness, we see that TSVD
+performs equals or sometimes better than the RV-Predict for the JACONTEBE
+benchmark. In the case of accurateness of the bugs, we at first manually
+inspect the source code to confirm that the bug was actually happened. But for
+the JACONTEBE benchmark, the data-race situation is explicitely mentioned.
+These two things are done when we need to mark a detected bug as true positive
+or false positive. Table~\ref{table:comparison} represents that the true positive for the TSVD
+is promising also instead of false positive. 
+
+%\shanto{put the table for bugs found}
+
+\begin{table}
+	\centering
+	\caption{comparison with RV-Predict}
+	\label{table:comparison}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		Project Name         & \begin{tabular}[c]{@{}l@{}}TSVD \\ (\#Bugs)\end{tabular} & \begin{tabular}[c]{@{}l@{}}RV-Predict \\ (\#Bugs)\end{tabular} \\ \hline
+			Apache Log4j (log4j) & 5             & 1                   \\ \hline
+			DBCP                 & 1             & 1                   \\ \hline
+			Derby                & 1             & 1                   \\ \hline
+			Groovy               & 1             & 2                   \\ \hline
+	\end{tabular}
+\end{table}
+
+
+\subsubsection{  }
+
+
+
+
+%Just want to say that results for \Use{apache/hadoop_name} is
+%\Use{apache/hadoop_result_num}.
+
+%\subsection{RQ2: Second research question}
+%\label{sec:eval:rq2}
+
+%\input{tables/table.tex}
+%\input{tables/dataset-table.tex}
+%\input{tables/bugs-table.tex}
+%\input{tables/comparison-table.tex}
+%\input{tables/1Table.tex}
+
+%Table~\ref{table:tab} shows our results.
+
+
+
+

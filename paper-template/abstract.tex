@@ -1,4 +1,13 @@
-Abstract text goes here, describing our \Toolname{} and our
+Data race is a very common problem in any multi-threading applications where
+one shared variable is accesssed by multiple threads simultaneously. This often
+makes a program's outcomes inconsistent which makes developers puzzled. In this
+project, our goal is to automatically find out any data race situation occured
+in the program. Hence, we implement a thread safety violation detection tool
+namely \Toolname{TSVD} to inform the developers if their code suffers from data
+race situation.  In experiment, we considered few known projects which have
+data-race situation. Later, we also considered few unknown github projects to
+verify our implementation. For both cases, we observed that our TSVD can detect
+data race situation. JACONTEBE bechmark dataset which have data race issues.
 results: \TotalResults{}.
 
 \Fix{Trying out some Fix text, please address these.}
