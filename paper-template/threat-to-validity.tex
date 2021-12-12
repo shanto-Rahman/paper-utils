@@ -1,10 +1,26 @@
 \section{Threat to Validity}
 \label{lbl:threat}
-In this section, we will discuss about our main threats to implement this project. 
 
-\subsection{Implementation Difficulties}
+This section discusses the threats which can affect the validity of the
+proposed technique. The threats are identified from two perspectives -
+internal threats and external threats.
 
-\subsection{Runtime Overhead}
 
-Server issue....
+\subsection{Internal Threats}
+The internal threats refer to the threats that affect                                                                                         the validity of the results which depend on the implementation of the technique
+and the environmental set up of the experimental procedure. The implemented project has many of the thresholds which are randomly set. To make
+ the TSVD, we believe these parameters should be set empirically or adaptively. Another issue is currently, we are not considering different
+ synchronization operations like synchronized. As a result, our implemented TSVD suffers from false positives to detect data race bugs.
+ However, in the future we have a plan to work on this to overcome the problem of false positives.
+
+ \subsection{External Threats} As TSVD performs byte code analysis, dependent
+ pair identification, thread id, object id pair creation and so on to detect the                                                               conflicting statements due to the multiple threads, the time-consumption is too
+ high. Hence, we need to rely on the high processing server machine. It is                                                                     noteworthy that even after using server machine to run a single
+ project, we need more that $20$ hours for some cases. However, in the future,                                                                 we will run our experiments on a supercomputer to generate result in more
+ faster way.
+
+
+%\subsection{Construct Threats}
+
+%Server issue....
 

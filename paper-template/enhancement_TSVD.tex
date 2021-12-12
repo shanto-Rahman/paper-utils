@@ -1,21 +1,42 @@
 \section{Enhancement of TSVD}
-\label{lbl:tsvd_enhance}
+\label{sec:enhancement_tsvd}
 \input{code/code1}
-In this project, initially we implement the TSVD paper \cite{} and run our
+In this project, initially we implement the TSVD paper \cite{li2019efficient} and run different
 subject projects on it. We observed that the TSVD can handle the thread safety
-API if it finds in the code but it measurebly fails when the source code has
+API if it finds those in the code but it measurebly fails when the source code has
 some primitive types of shared objects. For example, any shared integer
 variable, string variable and so on. Meanwhile, when we manually inspect the
-source code to find the existance of data-race situation, we identify these are
-very commonly happening in the source code shown in Figure~\ref{fig:dataRace2}. Hence, we modify our TSVD with the
-incorporation of these variable assignment operations. 
+source code to find the existence of data-race situation, we identify these are
+very commonly happening in the source code shown in Figure~\ref{fig:dataRace2}. Hence, we modify the existing TSVD with the
+incorporation of these variable assignment operations.
 
-In order to detect more data-race situation, we modify the byte-code
+In order to detect more data-race situations, we modify the byte-code
 instrumentation to get assignment operation by PUTSTATIC, GETSTATIC and
-PUTFIELD, GETFIELD opcode from the java byte code stack tarce. Then we call the
-different proxy methods to handle those types of operation by our TSVD. Basically these four operations were missing in the TSVD and hence we incorporate those for JAVA thread safety violation detection. 
+PUTFIELD, GETFIELD opcodes from the Java bytecode stack trace. Then we call
+different proxy methods to handle those data race situation types by our TSVD. Basically these four operations were missing in the TSVD and hence we incorporate those to detect Java thread safety violations.
 
+To evaluate our claim, we consider the JACONTEBE benchmark (a dataset with
+different concurrency bugs) and run the both existing and enhanced TSVD. Table
+\ref{table:TSVD_comparison} represents the four different JACONTEBE
+projects and the number of bugs found by the original TSVD compared to
+our enhanced TSVD technique. Results indicate that
+original TSVD fails every time for these types (similar to the Figure~\ref{fig:dataRace2}) of the datarace situation whereas our enhanced TSVD can detect the bugs.
 
+\begin{table}
+	\centering
+	\caption{Comparison between Original and Enhanced TSVD Techniques}
+	\label{table:TSVD_comparison}
+	\begin{tabular}{|l|rr|}
+		\hline
+		\multicolumn{1}{|c|}{\multirow{2}{*}{\textbf{Project Name}}}                     & \multicolumn{2}{c|}{\textbf{\#{Bugs}}}                                                                                                                                              \\ \cline{2-3} 
+		\multicolumn{1}{|c|}{}                                                           & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Original \\ TSVD\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Enhanced \\ TSVD\end{tabular}}} \\ \hline
+			\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Apache\\  Log4j (log4j)\end{tabular}} & \multicolumn{1}{r|}{0}                                                                 & 2                                                                                      \\ \cline{2-3} 
+				                                                                                 & \multicolumn{1}{r|}{0}                                                                 & 3                                                                                      \\ \hline
+														 DBCP                                                                             & \multicolumn{1}{r|}{0}                                                                 & 1                                                                                      \\ \hline
+														 Derby                                                                            & \multicolumn{1}{r|}{0}                                                                 & 1                                                                                      \\ \hline
+														 Groovy                                                                           & \multicolumn{1}{r|}{0}                                                                 & 1                                                                                      \\ \hline
+	\end{tabular}
+\end{table}
 
 
 

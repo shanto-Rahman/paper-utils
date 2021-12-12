@@ -8,7 +8,7 @@ thread-synchronization often introduces concurrency faults more specifically
 data-race. Data race is a situation when multiple threads will access a shared
 variable and will try to access memory location at the same time.
 Figure~\ref{fig:code} represents a code snippet of data race situation taken
-from JACONTEBE benchmark \cite{}. In this example code, appenderList is a
+from JACONTEBE benchmark \cite{lin2015jacontebe}. In this example code, appenderList is a
 shared data structure. At line 3, the size of the list is measured and if the
 size is a non-zero positive integer then the values are extracted one by one.
 At the end of this, the appenderList data structure is made null. The problem
@@ -60,11 +60,14 @@ can potentially detect five conflicting data race pairs and we will report
 these five to those projects to open new issues.
 
 
-The rest of this paper is organized as follows. Section \ref{} presents an overview
-of the existing works. Section \ref{sec:method} presents our algorithms to find thread safety violations. Section \ref{sec:experiment}
-provides demonstration of the effectiveness of TSVD and lists the experimental
-results to illustrate the performance of TSVD as compared to other existing
-RV-Predict tool. Finally, Section \ref{} concludes the findings with future research directions.
+The rest of this paper is organized as follows. Section \ref{sec:method}
+presents our existing TSVD algorithms to find thread safety violations. Section
+\ref{sec:enhancement_tsvd} discusses about the limitations of existing TSVD and
+propose some advancement on the existing TSVD technique. Section
+\ref{sec:experiment} provides demonstration of the effectiveness of TSVD and
+lists the experimental results to illustrate the performance of TSVD as
+compared to other existing RV-Predict tool. Finally, Section
+\ref{sec:conclusion} concludes the findings with future research directions.
 
 
 

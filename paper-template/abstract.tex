@@ -1,13 +1,16 @@
 Data race is a very common problem in any multi-threading applications where
-one shared variable is accesssed by multiple threads simultaneously. This often
-makes a program's outcomes inconsistent which makes developers puzzled. In this
-project, our goal is to automatically find out any data race situation occured
-in the program. Hence, we implement a thread safety violation detection tool
-namely \Toolname{TSVD} to inform the developers if their code suffers from data
-race situation.  In experiment, we considered few known projects which have
-data-race situation. Later, we also considered few unknown github projects to
-verify our implementation. For both cases, we observed that our TSVD can detect
-data race situation. JACONTEBE bechmark dataset which have data race issues.
-results: \TotalResults{}.
+one shared variable is accessed by multiple threads simultaneously. This often
+makes a program's outcomes inconsistent which makes developers puzzled. Hence, in this
+project, our goal is to automatically find out data race situation occurred
+in the program and to inform the developers in advance.
 
-\Fix{Trying out some Fix text, please address these.}
+In this project, we have two main contributions. In our first contribution, we implement an already established thread safety violation detection tool
+namely \Toolname{} which was written in C\#. However, in this study we consider their ideas and implement those ideas to Java programs as Java is commonly suffering from data
+race situations due to the existence of multiple threads. Afterwards, we analyze the limitations of the original TSVD technique and propose some enhancement on that TSVD. To evaluate our enhancement, we consider 31 different open source Java projects as the dataset and run original and enhanced TSVD on those. In addition to this, we also compare our result with another existing data-race detection tool namely RV-Predict. The experimental results show that our enhanced TSVD can detect data-race bugs from 9 different projects in multiple places. On the other hand, compared to the RV-Predict, our enhanced TSVD performs better to detect bugs in most of the cases.
+
+%data-race situation. Later, we also considered few unknown github projects to
+%verify our implementation. For both cases, we observed that our TSVD can detect
+%data race situation. JACONTEBE bechmark dataset which have data race issues.
+%results: \TotalResults{}.
+
+%\Fix{Trying out some Fix text, please address these.}

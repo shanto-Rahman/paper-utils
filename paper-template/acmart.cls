@@ -1304,10 +1304,10 @@
   \fi
   \ifx\addresses\@empty
     \if@ACM@anonymous
-      \gdef\addresses{\@author{Anonymous Author(s)%
+      \gdef\addresses{\@author{%Anonymous Author(s)%
         \ifx\@acmSubmissionID\@empty\else\\Submission Id:
           \@acmSubmissionID\fi}}%
-      \gdef\authors{Anonymous Author(s)}%
+      \gdef\authors{}%
     \else
       \expandafter\gdef\expandafter\addresses\expandafter{%
         \expandafter\@author\expandafter{%

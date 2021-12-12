@@ -1,0 +1,932 @@
+#-rm -f main.aux
+#-rm -f main.bbl
+pdflatex main && bibtex main && pdflatex main && bibtex main && pdflatex main
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (./acmart.cls
+Document Class: acmart 2021/05/01 v1.78 Typesetting articles for the Associatio
+n for Computing Machinery
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))))
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsart.cls
+Document Class: amsart 2017/10/31 v2.20.4
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/totpages/totpages.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperxmp/hyperxmp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/atenddvi/atenddvi.sty
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-abspage.sty
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-base.sty
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-lastpage.sty
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/ncctools/manyfoot.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ncctools/nccfoots.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/pdftex/glyphtounicode.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty)
+
+Class acmart Warning: You do not have the libertine package installed. Please u
+pgrade your TeX on input line 722.
+
+
+Class acmart Warning: You do not have the inconsolata (zi4.sty) package install
+ed. Please upgrade your TeX on input line 725.
+
+
+Class acmart Warning: You do not have the newtxmath package installed. Please u
+pgrade your TeX on input line 728.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
+Excluding comment 'comment') Excluding comment 'CCSXML'
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+Special comment 'acks') (./macros.tex
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(./data/projstats.tex) (./data/data.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/balance.sty)
+Excluding comment 'screenonly' Include comment 'printonly'
+Excluding comment 'anonsuppress' Excluding comment 'acks'
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+No file main.aux.
+<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+ABD: EveryShipout initializing macros
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(./abstract.tex)
+
+LaTeX Warning: Reference `TotPages' on page 1 undefined on input line 26.
+
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg) (./intro.tex
+(./code/code.tex (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+)<<ot1tt.cmap>>
+Overfull \hbox (22.14595pt too wide) in paragraph at lines 7--8
+[][][][][][][][][][][][][][][][][][][][][][] 
+
+Class acmart Warning: A possible image without description on input line 17.
+
+)
+
+LaTeX Warning: Reference `fig:code' on page 1 undefined on input line 10.
+
+
+Package natbib Warning: Citation `lin2015jacontebe' on page 1 undefined on inpu
+t line 11.
+
+
+Package natbib Warning: Citation `kahlon2009ESEC' on page 1 undefined on input 
+line 30.
+
+
+Package natbib Warning: Citation `naik2006PLDI' on page 1 undefined on input li
+ne 30.
+
+
+Package natbib Warning: Citation `pozniansky2007multirace' on page 1 undefined 
+on input line 32.
+
+
+Package natbib Warning: Citation `li2019efficient' on page 1 undefined on input
+ line 32.
+
+
+Package natbib Warning: Citation `li2019efficient' on page 1 undefined on input
+ line 38.
+
+
+Package natbib Warning: Citation `toy_project_1' on page 1 undefined on input l
+ine 51.
+
+
+Package natbib Warning: Citation `toy_project_2' on page 1 undefined on input l
+ine 52.
+
+
+Package natbib Warning: Citation `lin2015jacontebe' on page 1 undefined on inpu
+t line 52.
+
+
+Package natbib Warning: Citation `githubProjects' on page 1 undefined on input 
+line 53.
+
+
+LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 61.
+
+[1.1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `sec:method' on page 2 undefined on input line 63.
+
+
+LaTeX Warning: Reference `sec:enhancement_tsvd' on page 2 undefined on input li
+ne 65.
+
+
+LaTeX Warning: Reference `sec:experiment' on page 2 undefined on input line 67.
+
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 70.
+
+
+) (./method.tex
+
+Package natbib Warning: Citation `asm' on page 2 undefined on input line 16.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active)
+(./enhancement_TSVD.tex (./code/code1.tex
+
+Class acmart Warning: A possible image without description on input line 16.
+
+[2.2])
+
+Package natbib Warning: Citation `li2019efficient' on page 3 undefined on input
+ line 4.
+
+
+LaTeX Warning: Reference `fig:dataRace2' on page 3 undefined on input line 10.
+
+
+LaTeX Warning: Reference `table:TSVD_comparison' on page 3 undefined on input l
+ine 20.
+
+
+LaTeX Warning: Reference `fig:dataRace2' on page 3 undefined on input line 23.
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 27--27
+[]\OT1/cmr/bx/n/9 Table 1: |Com-par-i-son be-tween Orig-i-nal and En-
+) (./experiment.tex
+
+Package natbib Warning: Citation `maven' on page 3 undefined on input line 11.
+
+
+LaTeX Warning: Reference `table:dataset' on page 3 undefined on input line 12.
+
+
+LaTeX Warning: Reference `table:dataset' on page 3 undefined on input line 35.
+
+
+LaTeX Warning: Reference `table:dataset' on page 3 undefined on input line 38.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [3.3]
+
+LaTeX Warning: Reference `table:bugs' on page 4 undefined on input line 107.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd)
+
+LaTeX Warning: Reference `table:overhead' on page 4 undefined on input line 147
+.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [4.4]
+Overfull \hbox (12.54019pt too wide) in paragraph at lines 163--197
+ [][] 
+
+Package natbib Warning: Citation `rv-predict' on page 5 undefined on input line
+ 206.
+
+
+LaTeX Warning: Reference `table:comparison' on page 5 undefined on input line 2
+07.
+
+
+LaTeX Warning: Reference `table:comparison' on page 5 undefined on input line 2
+16.
+
+) (./threat-to-validity.tex
+Underfull \vbox (badness 10000) has occurred while \output is active [5.5])
+(./conclusion.tex)
+No file main.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+
+Class acmart Warning: Some images may lack descriptions.
+
+[6.6] (./main.aux
+
+Package atenddvi Warning: Rerun LaTeX, last page not yet found.
+
+)
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information) </home/shanto-admin/.texli
+ve2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0700.600pk></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt8.pfb>
+Output written on main.pdf (6 pages, 275842 bytes).
+Transcript written on main.log.
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+The top-level auxiliary file: main.aux
+The style file: ACM-Reference-Format.bst
+Database file #1: bib.bib
+Warning--no key, author in toy_project_1
+Warning--no author, editor, organization, or key in toy_project_1
+Warning--to sort, need author or key in toy_project_1
+Warning--no key, author in toy_project_2
+Warning--no author, editor, organization, or key in toy_project_2
+Warning--to sort, need author or key in toy_project_2
+Warning--no key, author in githubProjects
+Warning--no author, editor, organization, or key in githubProjects
+Warning--to sort, need author or key in githubProjects
+Warning--no key, author in asm
+Warning--no author, editor, organization, or key in asm
+Warning--to sort, need author or key in asm
+Warning--no key, author in maven
+Warning--no author, editor, organization, or key in maven
+Warning--to sort, need author or key in maven
+Warning--no key, author in rv-predict
+Warning--no author, editor, organization, or key in rv-predict
+Warning--to sort, need author or key in rv-predict
+Warning--no key, author in asm
+Warning--no key, author in asm
+Warning--no key, author in githubProjects
+Warning--no key, author in githubProjects
+Warning--no key, author in maven
+Warning--no key, author in maven
+Warning--no key, author in rv-predict
+Warning--no key, author in rv-predict
+Warning--no key, author in toy_project_1
+Warning--no key, author in toy_project_1
+Warning--no key, author in toy_project_2
+Warning--no key, author in asm
+Warning--no author, editor, organization, or key in asm
+Warning--empty author in asm
+Warning--no key, author in maven
+Warning--no author, editor, organization, or key in maven
+Warning--empty author in maven
+Warning--no key, author in githubProjects
+Warning--no author, editor, organization, or key in githubProjects
+Warning--empty author in githubProjects
+Warning--no key, author in rv-predict
+Warning--no author, editor, organization, or key in rv-predict
+Warning--empty author in rv-predict
+Warning--no key, author in toy_project_1
+Warning--no author, editor, organization, or key in toy_project_1
+Warning--empty author in toy_project_1
+Warning--no key, author in toy_project_2
+Warning--no author, editor, organization, or key in toy_project_2
+Warning--empty author in toy_project_2
+Warning--empty publisher in kahlon2009ESEC
+Warning--empty address in kahlon2009ESEC
+Warning--empty publisher in li2019efficient
+Warning--empty address in li2019efficient
+Warning--empty publisher in lin2015jacontebe
+Warning--empty address in lin2015jacontebe
+Warning--empty publisher in naik2006PLDI
+Warning--empty address in naik2006PLDI
+(There were 55 warnings)
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (./acmart.cls
+Document Class: acmart 2021/05/01 v1.78 Typesetting articles for the Associatio
+n for Computing Machinery
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))))
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsart.cls
+Document Class: amsart 2017/10/31 v2.20.4
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/totpages/totpages.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperxmp/hyperxmp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/atenddvi/atenddvi.sty
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-abspage.sty
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-base.sty
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-lastpage.sty
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/ncctools/manyfoot.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ncctools/nccfoots.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/pdftex/glyphtounicode.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty)
+
+Class acmart Warning: You do not have the libertine package installed. Please u
+pgrade your TeX on input line 722.
+
+
+Class acmart Warning: You do not have the inconsolata (zi4.sty) package install
+ed. Please upgrade your TeX on input line 725.
+
+
+Class acmart Warning: You do not have the newtxmath package installed. Please u
+pgrade your TeX on input line 728.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
+Excluding comment 'comment') Excluding comment 'CCSXML'
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+Special comment 'acks') (./macros.tex
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(./data/projstats.tex) (./data/data.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/balance.sty)
+Excluding comment 'screenonly' Include comment 'printonly'
+Excluding comment 'anonsuppress' Excluding comment 'acks'
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+(./main.aux)<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+ABD: EveryShipout initializing macros
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./main.out) (./main.out)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(./abstract.tex) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+ (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg) (./intro.tex
+(./code/code.tex (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+)<<ot1tt.cmap>>
+Overfull \hbox (22.14595pt too wide) in paragraph at lines 7--8
+[][][][][][][][][][][][][][][][][][][][][][] 
+
+Class acmart Warning: A possible image without description on input line 17.
+
+)
+
+Package natbib Warning: Citation `lin2015jacontebe' on page 1 undefined on inpu
+t line 11.
+
+
+Package natbib Warning: Citation `kahlon2009ESEC' on page 1 undefined on input 
+line 30.
+
+
+Package natbib Warning: Citation `naik2006PLDI' on page 1 undefined on input li
+ne 30.
+
+
+Package natbib Warning: Citation `pozniansky2007multirace' on page 1 undefined 
+on input line 32.
+
+
+Package natbib Warning: Citation `li2019efficient' on page 1 undefined on input
+ line 32.
+
+
+Package natbib Warning: Citation `li2019efficient' on page 1 undefined on input
+ line 38.
+
+
+Package natbib Warning: Citation `toy_project_1' on page 1 undefined on input l
+ine 51.
+
+
+Package natbib Warning: Citation `toy_project_2' on page 1 undefined on input l
+ine 52.
+
+
+Package natbib Warning: Citation `lin2015jacontebe' on page 1 undefined on inpu
+t line 52.
+
+
+Package natbib Warning: Citation `githubProjects' on page 1 undefined on input 
+line 53.
+
+[1.1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./method.tex
+
+Package natbib Warning: Citation `asm' on page 2 undefined on input line 16.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active)
+(./enhancement_TSVD.tex (./code/code1.tex
+
+Class acmart Warning: A possible image without description on input line 16.
+
+[2.2])
+
+Package natbib Warning: Citation `li2019efficient' on page 3 undefined on input
+ line 4.
+
+
+Package caption Warning: \label without proper reference on input line 14.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:dataRace2' on page 3 undefined on input line 10.
+
+
+Package caption Warning: \label without proper reference on input line 14.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:dataRace2' on page 3 undefined on input line 23.
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 27--27
+[]\OT1/cmr/bx/n/9 Table 1: |Com-par-i-son be-tween Orig-i-nal and En-
+) (./experiment.tex
+
+Package natbib Warning: Citation `maven' on page 3 undefined on input line 11.
+
+[3.3] (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd)
+Underfull \vbox (badness 10000) has occurred while \output is active [4.4]
+Overfull \hbox (12.54019pt too wide) in paragraph at lines 163--197
+ [][] 
+
+Package natbib Warning: Citation `rv-predict' on page 5 undefined on input line
+ 206.
+
+) (./threat-to-validity.tex [5.5]) (./conclusion.tex) (./main.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 58--63
+\OT1/cmr/m/n/7 (+20) Rahman / Byte -[] Code -[] Instrumentation / blob / master
+ / scripts /
+)
+
+Package natbib Warning: There were undefined citations.
+
+
+Class acmart Warning: Some images may lack descriptions.
+
+
+Class acmart Warning: ACM keywords are mandatory for papers over two pages.
+
+
+Class acmart Warning: CCS concepts are mandatory for papers over two pages.
+
+[6.6] (./main.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information) </home/shanto-admin/.texli
+ve2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0700.600pk></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt8.pfb>
+Output written on main.pdf (6 pages, 293840 bytes).
+Transcript written on main.log.
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+The top-level auxiliary file: main.aux
+The style file: ACM-Reference-Format.bst
+Database file #1: bib.bib
+Warning--no key, author in toy_project_1
+Warning--no author, editor, organization, or key in toy_project_1
+Warning--to sort, need author or key in toy_project_1
+Warning--no key, author in toy_project_2
+Warning--no author, editor, organization, or key in toy_project_2
+Warning--to sort, need author or key in toy_project_2
+Warning--no key, author in githubProjects
+Warning--no author, editor, organization, or key in githubProjects
+Warning--to sort, need author or key in githubProjects
+Warning--no key, author in asm
+Warning--no author, editor, organization, or key in asm
+Warning--to sort, need author or key in asm
+Warning--no key, author in maven
+Warning--no author, editor, organization, or key in maven
+Warning--to sort, need author or key in maven
+Warning--no key, author in rv-predict
+Warning--no author, editor, organization, or key in rv-predict
+Warning--to sort, need author or key in rv-predict
+Warning--no key, author in asm
+Warning--no key, author in asm
+Warning--no key, author in githubProjects
+Warning--no key, author in githubProjects
+Warning--no key, author in maven
+Warning--no key, author in maven
+Warning--no key, author in rv-predict
+Warning--no key, author in rv-predict
+Warning--no key, author in toy_project_1
+Warning--no key, author in toy_project_1
+Warning--no key, author in toy_project_2
+Warning--no key, author in asm
+Warning--no author, editor, organization, or key in asm
+Warning--empty author in asm
+Warning--no key, author in maven
+Warning--no author, editor, organization, or key in maven
+Warning--empty author in maven
+Warning--no key, author in githubProjects
+Warning--no author, editor, organization, or key in githubProjects
+Warning--empty author in githubProjects
+Warning--no key, author in rv-predict
+Warning--no author, editor, organization, or key in rv-predict
+Warning--empty author in rv-predict
+Warning--no key, author in toy_project_1
+Warning--no author, editor, organization, or key in toy_project_1
+Warning--empty author in toy_project_1
+Warning--no key, author in toy_project_2
+Warning--no author, editor, organization, or key in toy_project_2
+Warning--empty author in toy_project_2
+Warning--empty publisher in kahlon2009ESEC
+Warning--empty address in kahlon2009ESEC
+Warning--empty publisher in li2019efficient
+Warning--empty address in li2019efficient
+Warning--empty publisher in lin2015jacontebe
+Warning--empty address in lin2015jacontebe
+Warning--empty publisher in naik2006PLDI
+Warning--empty address in naik2006PLDI
+(There were 55 warnings)
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (./acmart.cls
+Document Class: acmart 2021/05/01 v1.78 Typesetting articles for the Associatio
+n for Computing Machinery
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))))
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsart.cls
+Document Class: amsart 2017/10/31 v2.20.4
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/totpages/totpages.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperxmp/hyperxmp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/atenddvi/atenddvi.sty
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-abspage.sty
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-base.sty
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-lastpage.sty
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/ncctools/manyfoot.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ncctools/nccfoots.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/pdftex/glyphtounicode.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/cmap/cmap.sty)
+
+Class acmart Warning: You do not have the libertine package installed. Please u
+pgrade your TeX on input line 722.
+
+
+Class acmart Warning: You do not have the inconsolata (zi4.sty) package install
+ed. Please upgrade your TeX on input line 725.
+
+
+Class acmart Warning: You do not have the newtxmath package installed. Please u
+pgrade your TeX on input line 728.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
+Excluding comment 'comment') Excluding comment 'CCSXML'
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+Special comment 'acks') (./macros.tex
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(./data/projstats.tex) (./data/data.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/balance.sty)
+Excluding comment 'screenonly' Include comment 'printonly'
+Excluding comment 'anonsuppress' Excluding comment 'acks'
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+(./main.aux)<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+ABD: EveryShipout initializing macros
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty))
+(./main.out) (./main.out)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(./abstract.tex) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+ (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg) (./intro.tex
+(./code/code.tex (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+)<<ot1tt.cmap>>
+Overfull \hbox (22.14595pt too wide) in paragraph at lines 7--8
+[][][][][][][][][][][][][][][][][][][][][][] 
+
+Class acmart Warning: A possible image without description on input line 17.
+
+) [1.1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./method.tex
+Underfull \vbox (badness 10000) has occurred while \output is active)
+(./enhancement_TSVD.tex (./code/code1.tex
+
+Class acmart Warning: A possible image without description on input line 16.
+
+[2.2])
+
+Package caption Warning: \label without proper reference on input line 14.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:dataRace2' on page 3 undefined on input line 10.
+
+
+Package caption Warning: \label without proper reference on input line 14.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:dataRace2' on page 3 undefined on input line 23.
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 27--27
+[]\OT1/cmr/bx/n/9 Table 1: |Com-par-i-son be-tween Orig-i-nal and En-
+) (./experiment.tex [3.3]
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd)
+Underfull \vbox (badness 10000) has occurred while \output is active [4.4]
+Overfull \hbox (12.54019pt too wide) in paragraph at lines 163--197
+ [][] 
+) (./threat-to-validity.tex [5.5]) (./conclusion.tex) (./main.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 58--63
+\OT1/cmr/m/n/7 (+20) Rahman / Byte -[] Code -[] Instrumentation / blob / master
+ / scripts /
+)
+
+Class acmart Warning: Some images may lack descriptions.
+
+
+Class acmart Warning: ACM keywords are mandatory for papers over two pages.
+
+
+Class acmart Warning: CCS concepts are mandatory for papers over two pages.
+
+[6.6] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+ )
+(see the transcript file for additional information) </home/shanto-admin/.texli
+ve2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0700.600pk></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt8.pfb>
+Output written on main.pdf (6 pages, 294670 bytes).
+Transcript written on main.log.
+****************************************************************
+#@latex main | grep -E 'arning|erfull'
+#@pdflatex main | grep -E 'arning|erfull'
+#@dvipdfm -p letter main
+#dvips -t letter -o main.ps main.dvi
+#ps2pdf -dPDFSETTINGS=/prepress main.ps main.pdf
+******** Did you spell-check the paper? ********
